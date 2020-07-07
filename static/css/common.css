@@ -1,0 +1,49 @@
+/* 
+	颜色为#3a0304  #edae00
+ */
+
+html,
+body {
+    background-color: #f7f8fa;
+    font-size: 14px;
+    color: #555;
+}
+
+.ketong-main-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.ketong-main-title-border {
+    border-bottom: #edae00 3px solid;
+}
+
+.ketong-sec-title {
+    font-size: 1.125rem;
+    color: #777;
+}
+
+.ketong-dark-red {
+    color: #3a0304;
+}
+
+.ketong-yellow {
+    color: #edae00;
+}
+
+.blockquote {
+    border-left: 4px #3A0304 solid;
+    line-height: 100%;
+    padding: 5px;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.page-item.active .page-link {
+	background: #3A0304;
+	border: #3A0304 1px solid;
+}

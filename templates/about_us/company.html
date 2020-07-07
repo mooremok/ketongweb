@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="container-fluid" id="company-banner"></div>
+<div class="container pb-5">
+			<div class="row pt-5">
+				<div class="col-lg-2 col-sm-12 service-list">
+					<div class="service-head text-center">
+						<p>关于我们</p>
+					</div>
+					<div class="service-title">
+						<ul>
+							<li><a href="{% url 'about_us:about_us' key='profile' %}">公司简介</a></li>
+							<li><a href="{% url 'about_us:about_us' key='culture' %}">企业文化</a></li>
+							<li><a href="{% url 'about_us:about_us' key='show' %}">企业风采</a></li>
+							<li><a href="{% url 'about_us:about_us' key='honor' %}">企业荣誉</a></li>
+							<li><a href="{% url 'about_us:about_us' key='video' %}">视频中心</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-10 col-sm-12 service-content">
+					<div class="service-path pt-3">
+						<span>首页 > </span>
+						<span>企业简介</span>
+						<hr class="mt-0">
+					</div>
+					<div class="service-detail pt-3 mb-3">
+						<p class="ketong-main-title blockquote">
+							{% if profile %}{{ profile.title }}{% endif %}
+							{% if culture %}{{ culture.title }}{% endif %}
+							{% if show %}{{ show.title }}{% endif %}
+							{% if honor %}{{ honor.title }}{% endif %}
+							{% if videos %}视频中心{% endif %}
+						</p>
+						<div>
+							{% if profile %}{{ profile.content|safe }}{% endif %}
+							{% if culture %}{{ culture.content|safe }}{% endif %}
+							{% if show %}{{ show.content|safe }}{% endif %}
+							{% if honor %}{{ honor.content|safe }}{% endif %}
+							{% if videos %}
+							<div class="d-flex justify-content-between">
+								{% for video in videos %}
+								<div class="col-lg-4 col-sm-12" id="video-item">
+								    <video width="100%" height="" controls>
+								        <source src="{{ video.video.url }}" type="video/mp4">
+								        您的浏览器不支持 video 属性。
+								    </video>
+								    <div class="text-left mt-2 pb-2 pl-2">
+								        <p class="mb-2 font-weight-bold">{{ video.title }}</p>
+								        <p>{{ video.upload_time }}</p>
+								    </div>
+								</div>
+								{% endfor %}
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

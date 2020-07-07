@@ -1,0 +1,57 @@
+<div class="container-fluid footer">
+	<div class="container pt-3">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6 about-us pb-5">
+				<div>
+					<h4 class="text-white">关于我们</h4>
+				</div>
+				<ul>
+					<li><a href="">公司简介</a></li>
+					<li><a href="">企业文化</a></li>
+					<li><a href="">可通风采</a></li>
+					<li><a href="">企业荣誉</a></li>
+					<li><a href="">视频中心</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-6 about-us">
+				<div>
+					<h4 class="text-white">服务项目</h4>
+				</div>
+				<ul>
+					{% for service in services %}
+					<li><a href="{% url 'service:show_service_detail' service.id %}">{{ service.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-6 about-us">
+				<div>
+					<h4 class="text-white">资讯中心</h4>
+				</div>
+				<ul>
+					<li><a href="">企业动态</a></li>
+					<li><a href="">行业新闻</a></li>
+					<li><a href="">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-6 about-us">
+				<div class="pb-2">
+					<h4 class="text-white">联系我们</h4>
+				</div>
+				<p class="text-white pb-2">工作时间：周一至周日 8:00-21:00</p>
+				<p class="text-white pb-2">客服热线：400-856-9990</p>
+				<p class="pb-2"><a href="http://wpa.qq.com/msgrd?v=3&uin=2880138111&site=qq&menu=yes" target="_blank" class="text-warning">企业QQ：2880138111(点击在线沟通)</a></p>
+				<p class="text-white pb-2">公众号/客服微信</p>
+				<div class="qrcode">
+					<img src="http://www.szkt56.com/themes/default/images/2.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-info">
+		<div class="container footer-company">
+			<span class="ketong-dark-red">版权所有© 广东可通物流有限公司 匠心可通 让服务更进一步</span>
+			<span><a href="http://www.beian.miit.gov.cn/" target="_blank" class="ketong-dark-red">备案号：粤ICP备16013427号</a></span>
+			<span><a href="http://www.haobo-ad.com/" target="_blank" class="ketong-dark-red">策划设计：浩博品牌</a></span>
+		</div>
+	</div>
+</div>
