@@ -7,19 +7,34 @@
 	<div class="row pt-5">
 		<div class="col-lg-2 col-sm-12 service-list mb-3">
 			<div class="service-head text-center">
+				{% if is_spe %}
+				<p>特色服务</p>
+				{% else %}
 				<p>服务项目</p>
+				{% endif %}
 			</div>
 			<div class="service-title">
 				<ul>
-					{% for service in services %}
-					<li><a href="{% url 'service:show_service_detail' service.id %}">{{ service.title }}</a></li>
+					{% if is_spe %}
+					{% for service in spe_services %}
+					<li class="service-lists"><a href="{% url 'service:show_spe_services_detail' service.id %}">{{ service.title }}</a></li>			
 					{% endfor %}
+					{% else %}
+					{% for service in services %}
+					<li class="service-lists"><a href="{% url 'service:show_service_detail' service.id %}">{{ service.title }}</a></li>
+					{% endfor %}
+					{% endif %}
 				</ul>
 			</div>
 		</div>
 		<div class="col-lg-10 col-sm-12 service-content">
 			<div class="service-path pt-3">
-				<span>首页</span><span>服务项目</span>
+				<span>首页</span>
+				{% if is_spe %}
+				<span>特色服务</span>
+				{% else %}
+				<span>服务项目</span>
+				{% endif %}
 				<hr class="mt-2">
 			</div>
 			<div class="service-detail pt-3 mb-3">
@@ -33,4 +48,5 @@
 		</div>
 	</div>
 </div>
+<script src="{% static 'js/sub-page-nav.js'%}" type="text/javascript" charset="utf-8"></script>
 {% endblock %}

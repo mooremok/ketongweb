@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import MessageBoard
-from  service.models import Service
+from  service.models import Service, SpecialService
 from django.contrib import messages
 
-def messageboard(request):    
+def messageboard(request): 
+    spe_services = SpecialService.objects.all()   
     if request.method == 'POST':
         title = request.POST.get('tousu-title')
         type = request.POST.get('tousu-type')
@@ -27,5 +28,6 @@ def messageboard(request):
         services = Service.objects.all()
         context = {
             'services': services,
+            'spe_services': spe_services,
         }
         return render(request, 'online/messages.html', context)

@@ -10,6 +10,6 @@ class ServiceAdmin(AdminBase):
 class SpecialServiceAdmin(AdminBase):
     pass
 
-@admin.register(KeeperService)
-class KeeperServiceAdmin(AdminBase):
-    pass
+# @admin.register(KeeperService)
+# class KeeperServiceAdmin(AdminBase):
+#     pass

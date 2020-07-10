@@ -15,6 +15,7 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#该语句的作用：让django到apps目录下寻找app
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 

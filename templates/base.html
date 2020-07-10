@@ -48,8 +48,16 @@
 									{% endfor %}
 								</div>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'service:show_service_detail' 6 %}">管家服务</a>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="{% url 'service:spe_services' %}" id="navbarDropdown" role="button" data-toggle="#"
+								 aria-haspopup="true" aria-expanded="false">
+									特色服务
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									{% for service in spe_services %}
+									<a class="dropdown-item" href="{% url 'service:show_spe_services_detail' service.id %}">{{ service.title }}</a>
+									{% endfor %}
+								</div>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">在线服务</a>

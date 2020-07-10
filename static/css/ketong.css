@@ -397,8 +397,9 @@
 }
 
 .service-list>.service-head {
-	background-color: #3A0304;
+	background-color: #EDAE00;
 	height: 3.125rem;
+	border-bottom: 1px #fff solid;
 }
 
 .service-list>.service-head p {
@@ -409,7 +410,7 @@
 }
 
 .service-list>.service-title {
-	background-color: #EDAE00;
+	background-color: #3A0304;
 }
 
 .service-list ul {
@@ -419,22 +420,32 @@
 .service-list ul li {
 	line-height: 35px;
 	text-align: center;
+	border-bottom: #fff 1px solid;
 }
+
 
 .service-list ul li:hover {
-	background: #3A0304;
+	background: #EDAE00;
 }
 
+.service-list ul li.is-click {
+	background: #EDAE00;
+}
+/* .service-list ul li:first-child {
+	background: #EDAE00;
+} */
+
+
+
 .service-list ul li:hover a {
-	color: white;
+	color: #fff;
 }
 
 .service-list ul li a {
-	color: #3A0304;
+	color: #fff;
 }
 
 .service-list ul li a:hover {
-	color: white;
 	text-decoration: none;
 }
 

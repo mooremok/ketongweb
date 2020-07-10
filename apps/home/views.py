@@ -3,7 +3,7 @@ from ad.models import IndexBanner
 from info.models import Info, News, QandA
 from about_us.models import Video
 from customer.models import Customer, Type
-from service.models import Service
+from service.models import Service, SpecialService
 
 
 def index(request):
@@ -15,6 +15,7 @@ def index(request):
     videos = Video.objects.all()[:3]
     types = Type.objects.all()
     services = Service.objects.all()
+    spe_services = SpecialService.objects.all()
     context = {
         'banners': banners,
         'infos': infos,
@@ -23,5 +24,6 @@ def index(request):
         'videos': videos,
         'types': types,
         'services': services,
+        'spe_services': spe_services,
     }
     return render(request, 'home/index.html', context)
