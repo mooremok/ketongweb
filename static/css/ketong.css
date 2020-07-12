@@ -1,3 +1,74 @@
+#right-box {
+	position: fixed;
+	right: 0px;
+	top: 35%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+	height: 400px;
+	width: 80px;
+	background: #EDAE00;
+	text-align: center;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+#right-box .right-box-item {
+	height: 80px;
+	width: 100%;
+	/* background: #EEEEEE; */
+	border: 1px #fff solid;
+	padding-top: 0.9375rem;
+	position: relative;
+	cursor: pointer;
+}
+
+#right-box .right-box-item a:hover {
+	text-decoration: none;
+}
+
+#right-box-qrcode {
+	position: absolute;
+	top: 0px;
+	left: -210px;
+	background: #fff;
+	box-shadow: 0 3px 5px 2px rgba(0,0,0,.3);
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#kefu-weixin:hover #right-box-qrcode {
+	display: block;
+}
+
+
+/* 解决弹出菜单被banner遮盖的问题 */
+.navbar-collapse {
+	z-index: 2000;
+}
+
+#right-box .right-box-item .kefu-tel {
+	position: absolute;
+	width: 200px;
+	height: 80px;
+	background: rgba(0,0,0,.8);
+	top: 0px;
+	left: -210px;
+	display: none;
+}
+
+#right-box .right-box-item .kefu-tel p {
+	color: white;
+	margin-top: 30px;
+	font-size: 20px;
+}
+
+#kefu-contact:hover .kefu-tel {
+	display: block;
+}
+
 .dropdown-item:hover {
 	background: #3A0304;
 	color: #EDAE00;
@@ -47,8 +118,11 @@
 
 .banner {
 	position: relative;
-	z-index: 999;
+	/* display: none; */
 }
+/* .carousel-inner {
+	z-index: 1;
+} */
 
 .carousel-inner .carousel-item {
 	background-size: cover;
@@ -282,7 +356,7 @@
 	height: 100%;
 }
 
-.footer ul {
+/* .footer ul {
 	list-style: none;
 	padding-left: 0;
 }
@@ -292,19 +366,37 @@
 }
 
 .footer ul li a {
-	color: #EDAE00;
+	color: #fff;
 }
 
 .footer ul li a:hover {
 	text-decoration: none;
 	color: white;
+} */
+
+.footer .footer-box a {
+	color: #fff;
+}
+.footer .footer-box a:hover {
+	color: #EDAE00;
+	text-decoration: none;
 }
 
-.about-us h4 {
-	display: inline-block;
-	line-height: 40px;
-	border-bottom: #EDAE00 4px solid;
+.footer-title {
+	color: #EDAE00;
+	font-size: 18px;
+	font-weight: bold;
 }
+
+.footer-content {
+	color: #fff;
+}
+
+.footer-kefu img {
+	width: 100px;
+	height: 100px;
+}
+
 
 .qrcode img {
 	width: 80%;
@@ -364,6 +456,15 @@
 
 #tousu-banner {
 	background: url(../banner/tousu.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 18.75rem;
+}
+
+#network-banner {
+	background: url(../banner/network-banner.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

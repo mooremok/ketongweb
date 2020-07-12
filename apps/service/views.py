@@ -7,7 +7,6 @@ def show_service(request):
     service = Service.objects.first()
     spe_services = SpecialService.objects.all()
 
-    # banner = get_object_or_404(SubPageBanner, id=1)
     context = {
       'services': services,
       'service': service,
@@ -18,6 +17,8 @@ def show_service(request):
 def show_service_detail(request, service_id):
     service = get_object_or_404(Service, id=service_id)
     services = Service.objects.all()
+    spe_services = SpecialService.objects.all()
+
     context = {
         'service': service,
         'services': services,

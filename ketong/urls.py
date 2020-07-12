@@ -27,5 +27,5 @@ urlpatterns = [
     path('about-us/', include('about_us.urls', namespace='about_us')),
     path('info-center/', include('info.urls', namespace='info-center')),
     path('customer/', include('customer.urls', namespace='customer')),
-    path('message/', include('online.urls', namespace='online')),
+    path('online/', include('online.urls', namespace='online')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

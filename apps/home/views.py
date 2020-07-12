@@ -3,7 +3,7 @@ from ad.models import IndexBanner
 from info.models import Info, News, QandA
 from about_us.models import Video
 from customer.models import Customer, Type
-from service.models import Service, SpecialService
+from ketong.navs import dynamic_navs
 
 
 def index(request):
@@ -14,8 +14,7 @@ def index(request):
     qas = QandA.objects.all()[:5]
     videos = Video.objects.all()[:3]
     types = Type.objects.all()
-    services = Service.objects.all()
-    spe_services = SpecialService.objects.all()
+
     context = {
         'banners': banners,
         'infos': infos,
@@ -23,7 +22,6 @@ def index(request):
         'qas': qas,
         'videos': videos,
         'types': types,
-        'services': services,
-        'spe_services': spe_services,
     }
+    context.update(dynamic_navs())
     return render(request, 'home/index.html', context)

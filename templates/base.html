@@ -16,6 +16,7 @@
 	</head>
 
 	<body>
+		{% include 'right-box.html' %}
 		<div class="container-fluid header">
 			<!-- header-info -->
 			<div class="hear-info">
@@ -27,10 +28,14 @@
 			<!-- nav -->
 			<div class="container">
 				<nav class="navbar navbar-expand-lg">
-					<a class="navbar-brand" href="/"><img src="{% static 'images/logo.png'%}" alt="可通物流" style="height: 60px;width: atuo;"></a>
+					<a class="navbar-brand" href="/"><img src="{% static 'images/logo.png'%}" alt="可通物流" style="height: 40px;width: atuo;"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
+						<span class="navbar-toggler-icon"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-card-text" fill="currentColor"
+							 xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+								<path fill-rule="evenodd" d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+							</svg></span>
 					</button>
 					<div class="collapse navbar-collapse pl-5" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto ml-5">
@@ -44,13 +49,13 @@
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									{% for service in services %}
-									<a class="dropdown-item" href="{% url 'service:show_service_detail' service.id %}">{{ service.title }}</a> 
+									<a class="dropdown-item" href="{% url 'service:show_service_detail' service.id %}">{{ service.title }}</a>
 									{% endfor %}
 								</div>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="{% url 'service:spe_services' %}" id="navbarDropdown" role="button" data-toggle="#"
-								 aria-haspopup="true" aria-expanded="false">
+								<a class="nav-link dropdown-toggle" href="{% url 'service:spe_services' %}" id="navbarDropdown" role="button"
+								 data-toggle="#" aria-haspopup="true" aria-expanded="false">
 									特色服务
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -60,11 +65,11 @@
 								</div>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">在线服务</a>
+								<a class="nav-link" href="{% url 'online:network' %}">可通网点</a>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="{% url 'about_us:about_us' key='profile' %}" id="navbarDropdown" role="button" data-toggle="#"
-								 aria-haspopup="true" aria-expanded="false">
+								<a class="nav-link dropdown-toggle" href="{% url 'about_us:about_us' key='profile' %}" id="navbarDropdown" role="button"
+								 data-toggle="#" aria-haspopup="true" aria-expanded="false">
 									关于我们
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -76,14 +81,14 @@
 								</div>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="{% url 'info-center:company_info' %}" id="navbarDropdown" role="button" data-toggle="#"
-								 aria-haspopup="true" aria-expanded="false">
+								<a class="nav-link dropdown-toggle" href="{% url 'info-center:company_info' %}" id="navbarDropdown" role="button"
+								 data-toggle="#" aria-haspopup="true" aria-expanded="false">
 									资讯中心
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<a class="dropdown-item" href="{% url 'info-center:company_info' %}">企业动态</a>
-									<a class="dropdown-item" href="#">行业新闻</a>
-									<a class="dropdown-item" href="#">常见问题</a>
+									<a class="dropdown-item" href="{% url 'info-center:news' %}">行业新闻</a>
+									<a class="dropdown-item" href="{% url 'info-center:qas' %}">常见问题</a>
 								</div>
 							</li>
 							<li class="nav-item">

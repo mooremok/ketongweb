@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import MessageBoard
+from .models import MessageBoard, WechatQrCode, Network
 from  service.models import Service, SpecialService
 from django.contrib import messages
+from ketong.navs import dynamic_navs
 
 def messageboard(request): 
-    spe_services = SpecialService.objects.all()   
+       
     if request.method == 'POST':
         title = request.POST.get('tousu-title')
         type = request.POST.get('tousu-type')
@@ -25,9 +26,23 @@ def messageboard(request):
         messages.success(request, msg)
         return redirect('messages.html')
     else:
-        services = Service.objects.all()
-        context = {
-            'services': services,
-            'spe_services': spe_services,
-        }
+        context = dynamic_navs()
         return render(request, 'online/messages.html', context)
+
+
+def qrcode(request):
+    qrcode = WechatQrCode.objects.last()
+    context = {
+        'qrcode': qrcode,
+    }
+    return render(request, 'home/index.html', context)
+
+
+def network(request):
+    networks = Network.objects.last()
+    context = {
+        'networks': networks,
+    }
+    context.update(dynamic_navs())
+    return render(request, 'online/network.html', context)
+    
