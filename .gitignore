@@ -14,6 +14,8 @@ media/
 
 static/
 
+migrations/
+
 
 # Backup files #
 
