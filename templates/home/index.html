@@ -53,13 +53,15 @@
 		</div>
 		<div class="d-flex flex-wrap justify-content-between text-center">
 			{% for spe in spes %}
-			<a href="{{ spe.target }}">
+			
 			<div class="nice-route-item">
+				<a href="{{ spe.target }}">
 				<img src="{{ spe.image.url }}">
 				<p>{{ spe.title }}</p>
 				{{ spe.description|safe }}
+				</a>
 			</div>
-			</a>
+			
 			{% endfor %}
 			
 			<!-- <div class="nice-route-item">
