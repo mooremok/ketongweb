@@ -236,24 +236,29 @@
 	transform: translateY(-3px);
 	box-shadow: 0 0 14px 2px rgb(0, 0, 0, 0.3);
 }
+.nice-route-item:hover a {
+	color: #fff;
+	text-decoration: none;
+}
 
 .nice-route-item img {
 	width: 100%;
 	border-radius: 5px 5px 0 0;
 }
 
-.nice-route-item>p {
+.nice-route-item p {
 	color: white;
 	font-size: 1.125rem;
 	line-height: 2.5rem;
 }
 
-.nice-route-item>span {
+.nice-route-item span {
 	display: block;
 	text-align: left;
 	margin-left: 20px;
 	margin-right: 20px;
 	padding-top: 0px;
+	color: #fff;
 }
 
 @media (max-width: 991.92px) {
