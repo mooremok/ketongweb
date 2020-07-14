@@ -32,7 +32,7 @@
 		<div class="d-flex flex-wrap justify-content-between">
 			{% for ser in sers %}
 			<div class="service-item">
-				<a href="{{ ser.url }}">
+				<a href="{{ ser.target }}">
 					<img src="{{ ser.image.url }}" >
 					<p class="pt-4">- {{ forloop.counter }} -</p>
 					<p class="pt-2 pb-3">{{ ser.title }}</p>
@@ -53,11 +53,13 @@
 		</div>
 		<div class="d-flex flex-wrap justify-content-between text-center">
 			{% for spe in spes %}
+			<a href="{{ spe.target }}">
 			<div class="nice-route-item">
 				<img src="{{ spe.image.url }}">
 				<p>{{ spe.title }}</p>
 				{{ spe.description|safe }}
 			</div>
+			</a>
 			{% endfor %}
 			
 			<!-- <div class="nice-route-item">
